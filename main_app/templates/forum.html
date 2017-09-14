@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+input[type=text] {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+textarea{
+  margin: 8px 0px;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+button{
+  padding: 15px 35px;
+  background: #3F51B5;
+  color: #fff;
+  box-shadow: 2px 2px 6px 1px #ccc;
+}
+
+    </style>
+</head>
+<body style="font-family:Roboto, sans-serif">
+<div style="width: 100%;">
+    <form action="post_messages/"method="POST">
+        {% csrf_token %}
+        <div style="width: 60%; margin: 2% 20%;">
+            <div>
+                <p style="padding: 5px 0px 0px 15px;">Make a post and share what's there in your mind.</p>
+            </div>
+            <div style="float: left;width: 45%; margin: 0% 2%;">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <label for="email">Email</label><br>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div style="float: left;width: 45%; margin: 0% 2%;">
+                <label for="message">Message</label><br>
+                <textarea type="text" id="message" name="message" rows="8"></textarea>
+            </div>
+            <div style="float: right;margin: 0% 2%;">
+                <button type=submit>MAKE POST</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<div style="margin-top: 250px;">
+    {% for m in Messages %}
+    <div style="margin-top: 45px;padding: 15px;box-shadow: 1px 1px 5px 1px #ccc;width: 60%;margin: 15px 20%;">
+        <h3 style="margin: 8px 0px 5px 0px;">{{m.name}}</h3>
+        <p style="color: #747474;margin: 0px;padding: 0px;font-size:13px;">{{m.email}}</p>
+        <p>{{m.message}}</p>
+    </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>

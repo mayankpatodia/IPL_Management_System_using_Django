@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/Javeed%20Akthar/Documents/ipl/index.html# -->
+{% load staticfiles %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <title>IPLT20 - Statistics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="image/title-logo.jpg" type="image/jpg">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+
+</head>
+<!--header-->
+<body style="font-family:Roboto;">
+<header role="banner" class="mathhead">
+    <!---<div class="pbar" text-align="center">
+
+        <img src="{% static 'img/logo.jpg' %}" align="middle" style="position: relative;height: 130px;"/>
+
+    </div>-->
+    <img src="{% static 'img/nav_cover.png' %}" align="middle" style="width:100%;margin-top:-250px;z-index: -1;"/>
+    <nav class="nav_bar">
+        <ul class="menu">
+            <li><a href="index">HOME</a></li>
+            <li><a href="result">RESULT</a></li>
+            <li><a href="schedule">SCHEDULE</a></li>
+            <li><a href="teams">TEAMS</a></li>
+            <li><a href="stats" class="active">STATS</a></li>
+            <li><a href="contactus">CONTACT US</a></li>
+        </ul>
+    </nav>
+
+
+</header>
+
+<br><br> <br>
+
+<div class="card">
+    <table class="stats_table" align="center" style="width:80%;">
+        <col style="width:7%">
+        <col style="width:28%">
+        <col style="width:7%">
+        <col style="width:7%">
+        <col style="width:7%">
+        <col style="width:7%">
+        <col style="width:7%">
+        <tr style="background-color: #233F88; color:#fff">
+            <th>RANK</th>
+            <th style="text-align: left; padding-left: 30px;">TEAM</th>
+            <th>Match</th>
+            <th>Won</th>
+            <th>Lost</th>
+            <th>Tied</th>
+            <th>POINTS</th>
+        </tr>
+
+        {% for s in Statistics %}
+        <tr>
+
+            <td><strong>{{forloop.counter}}</strong></td>
+            <td style="text-align: left;">{{s.team.name}}</td>
+            <td>{{s.played}}</td>
+            <td>{{s.won}}</td>
+            <td>{{s.lost}}</td>
+            <td>{{s.tied}}</td>
+            <td>{{s.points}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+<br><br> <br>
+<div style="width: 80%; padding-left:10%;">
+    <div class="leader_card_orange" style="padding: 0px;height: 285px;">
+        <div style="padding: 0px 15px;margin: 0px; background: orange;">
+            <p style="margin: 0px; color: #fff;;padding: 5px;width: 100%;text-align: left;">Orange Cap</p>
+        </div>
+        <div style="float: left;display: inline;padding: 0px 0px 10px 0px;">
+            <div style="margin: 0px 10px;">
+                <p style="padding: 0px 18px;font-size: 28px;font-weight: 500;margin: 15px 0px 0px 0px;">{{o.name}}</p>
+                <p style="font-size: 28px;font-weight: 500;margin: 0px;text-align: left;padding: 0px 20px;color: #474747;">{{o.team.code}}</p>
+            </div>
+            <div style="margin: 0px 10px;">
+                <p style="padding: 0px 18px;font-size: 52px;font-weight: 500;margin: 15px 0px 0px 0px; text-align: left">{{o.runs}}</p>
+                <p style="font-size: 20px;font-weight: 500;margin: 0px;text-align: left;padding: 0px 20px;">RUNS</p>
+            </div>
+        </div>
+        <div style="display: inline-block;padding: 36px;margin: 0px;">
+            <img src="media/{{o.team.logo_url}}" style="width: 125px;"/>
+        </div>
+    </div>
+
+    <div class="leader_card_purple" style="padding: 0px; margin-left: 5%;height: 285px;">
+        <div style="padding: 0px 15px;margin: 0px; background: purple;">
+            <p style="margin: 0px; color: #fff;;padding: 5px;width: 100%;text-align: left;">Purple Cap</p>
+        </div>
+        <div style="float: left;display: inline;padding: 0px 0px 10px 0px;">
+            <div style="margin: 0px 10px;">
+                <p style="padding: 0px 18px;font-size: 28px;font-weight: 500;margin: 15px 0px 0px 0px;">{{p.name}}</p>
+                <p style="font-size: 28px;font-weight: 500;margin: 0px;text-align: left;padding: 0px 20px;color: #474747;">{{p.team.code}}</p>
+            </div>
+            <div style="margin: 0px 10px;">
+                <p style="padding: 0px 18px;font-size: 52px;font-weight: 500;margin: 15px 0px 0px 0px; text-align: left">{{p.wickets}}</p>
+                <p style="font-size: 20px;font-weight: 500;margin: 0px;text-align: left;padding: 0px 20px;">WICKETS</p>
+            </div>
+        </div>
+        <div style="display: inline-block;padding: 36px;margin: 0px;">
+            <img src="media/{{p.team.logo_url}}" style="width: 125px;"/>
+        </div>
+    </div>
+</div>
+
+<!--footer--><!---
+<footer>
+    <div class="copyrigth">
+        <p> &copy Copyright IPL, BCCI 2016. All Rights reserved.</p>
+    </div>
+</footer>-->
+
+
+</body>
+</html>

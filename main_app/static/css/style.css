@@ -1,0 +1,349 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+.mathhead {
+
+}
+.header-social {
+  overflow: hidden;
+  float: right;
+}
+li{
+  display: inline-block;
+
+}
+.pbar{
+  display: flex;
+  position: relative;;
+  width: 100%;
+  background-color: #233F88;
+  justify-content: center;
+}
+.pbar h3{
+	text-align: center;
+    width: 100%;
+    font-size: 45px;
+    background-color: #3F51B5;
+    padding: 20px 0px;
+    margin: 0px;
+}
+
+.pbar a{
+  font-family: Roboto;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.bbar{
+ display: inline-block;
+  width: 100%;
+  margin: 0px;
+}
+h3{
+  display: inline-block;
+}
+
+
+header{
+  font-style: bold;
+  font-size: 15px;
+text-shadow: 1px 1px 0px black;
+position: relative;
+z-index: 1;
+}
+
+.active{
+background-color:#1A398A;
+color:#fff;
+box-shadow:0px 0px 1px #ccc;
+}
+
+.nav_bar{
+    display: inline-block;
+    width: 100%;
+    height: 92px;
+    margin: 0px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background: #0000007C;
+}
+
+
+
+.spacer{
+    height:50px;
+}
+ .menu{
+    list-style-type: none;
+    padding: 5px;
+    position: absolute;
+    margin: 12px 25px;
+    float: right;
+    right: 0px;
+ }
+.menu li {
+	display:inline-block;
+	float:none;
+	border-radius: 1px;
+}
+
+.menu li a {
+    align-content: center;
+    line-height: 55px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000;
+    text-decoration: none;
+    color: #fff;
+    margin: 0px;
+    padding: 15px 35px;
+    transition: background 0.5s, border-radius 0.5s;
+    border-radius: 0px;
+}
+
+.menu li:hover a {
+	background: #1A398A;
+	color: #fff;
+    border-radius: 10px;
+    transition: border-radius 0.5s, background 0.5s;
+}
+
+.menu li:hover ul a {
+	background: #f3f3f3;
+	color: #2f3036;
+	height: 40px;
+	line-height: 40px;
+}
+.menu li:hover ul a:hover {
+	background: #19c589;
+	color: #fff;
+}
+footer {
+      background: #C5CAE9;
+    position: relative;
+  /*  bottom: 0;*/
+    width: 100%;
+    height: 100px;
+	bottom: 0px;
+	margin: 0px;
+}
+.copyrigth p{
+  float: right;
+  padding-top: 20px;
+  padding-right: 38px;
+  overflow: hidden;
+
+}
+/*....
+table*/
+
+.tbl_class{
+	text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+	align: center;
+}
+
+.tbl_class table{
+	box-shadow: 0px 0px 10px 5px #ccc;
+}
+
+.tbl_class th{
+	padding: 20px 75px;
+}
+
+.tbl_class td{
+	padding: 20px 75px;
+}
+
+
+/*-------------------------------SCHEDULE-----------------------------------*/
+
+.card{
+
+}
+
+.sch_table{
+  box-shadow: 0px 0px 10px 5px #ccc;
+}
+
+.sch_table tr th{
+  text-align: center;
+  padding: 20px 15px;
+  background-color: #233F88;
+  color:#fff;
+  font-size: 25px;
+}
+
+.sch_table tr td{
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.sch_table tr td div{
+  width: 33%;
+  float: left;
+}
+
+.sch_table tr td div img{
+  height: 85px;
+}
+
+/*---------------------------------TEAMS----------------------------------------------*/
+
+
+.teams_image: a{
+    width: 100%;
+    height: 100%;
+
+}
+
+.teams_image a:hover{
+    background:rgba(0,0,0,0.6);
+    background: #ccc;
+    opacity: 0.5;
+}
+
+.profile_team{
+    float: left;
+    width: 24.85%;
+    height: 225px;
+    display: inline;
+    margin: 1px;
+}
+
+
+.potrait{
+  width: 150px;
+  height: 190px;
+}
+
+.landscape{
+  width: 215px;
+  height: 190px;
+}
+
+
+.tbar{
+  display: flex;
+  position: relative;;
+  width: 100%;
+  background-color: #233F88;
+  justify-content: center;
+}
+.tbar_right{
+  float: right;
+}
+
+.tbar_right h3{
+  display: inline-block;
+  padding: 62px 190px;
+  color: #fff;
+}
+
+/*------------------------------------RESULT-------------------------------------------*/
+
+
+.win{
+  width: 100%;
+  text-align: center;
+    font-family: Roboto;
+    color: black;
+}
+
+.result_card{
+  float: left;
+position: relative;
+text-align: center;
+box-shadow: 1px 1px 3px 0px #ccc;
+margin: 1%;
+padding: 32px 40px;
+}
+
+
+.result_card_inside{
+    display:inline;
+    float: left;
+    margin: 0px 10px;
+    position: relative;
+}
+
+.result_card_inside img{
+    width: 80px;
+}
+
+/*-----------------------------------STATS--------------------------------------------*/
+
+.stats_table{
+  box-shadow: 0px 0px 10px 5px #ccc;
+}
+
+.stats_table tr th{
+  text-align: center;
+  padding: 20px 15px;
+  background-color: #233F88;
+  color:#fff;
+  font-size: 20px;
+}
+
+.leader_card_orange{
+  float: left;
+position: relative;
+text-align: center;
+box-shadow: 1px 1px 3px 0px #ccc;
+margin-bottom: 1%;
+padding: 32px 40px;
+background: #fdc173 url("http://static3.iplt20.com/resources/i/56/element-bgs/bg-leaders.png");
+}
+
+.leader_card_purple{
+  float: left;
+position: relative;
+text-align: center;
+box-shadow: 1px 1px 3px 0px #ccc;
+margin-bottom: 1%;
+padding: 32px 40px;
+background: #cfc1e1 url("http://static3.iplt20.com/resources/i/56/element-bgs/bg-leaders.png");
+}
+
+.stats_table tr td{
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.stats_table tr td div{
+  width: 33%;
+  float: left;
+}
+
+.stats_table tr td div img{
+  height: 85px;
+}
+.sch_table{
+  box-shadow: 0px 0px 10px 5px #ccc;
+}
+
+.squad tr th{
+  text-align: center;
+  padding: 20px 15px;
+  background-color: #233F88;
+  color:#fff;
+  font-size: 25px;
+}
+
+.squad tr td{
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.squad tr td div{
+  width: 33%;
+  float: left;
+}
+
+.squad tr td div img{
+  height: 85px;
+}

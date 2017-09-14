@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/Javeed%20Akthar/Documents/ipl/index.html# -->
+{% load staticfiles %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <title>IPLT20 - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="{% static 'image/title-logo.jpg' %}" type="image/jpg">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+
+</head>
+<!--header-->
+<body>
+<header role="banner" class="mathhead">
+    <!---<div class="pbar" text-align="center">
+
+        <img src="{% static 'img/logo.jpg' %}" align="middle" style="position: relative;height: 130px;"/>
+
+    </div>-->
+    <img src="{% static 'img/nav_cover.png' %}" align="middle" style="width:100%;margin-top:-40px;z-index: -1;"/>
+    <nav class="nav_bar" >
+        <img src="{% static 'img/logo.png' %}" style="float: left;height: 50px;margin: 15px 50px;"/>
+    <ul class="menu">
+        <li><a href="index" class="active">HOME</a></li>
+        <li><a href="result">RESULT</a></li>
+        <li><a href="schedule">SCHEDULE</a></li>
+        <li><a href="teams">TEAMS</a></li>
+        <li><a href="stats">STATS</a></li>
+        <li><a href="contactus">CONTACT US</a></li>
+    </ul>
+</nav>
+
+    <div class="spacer"></div>
+
+</header>
+
+<br><br> <br>
+
+
+<div id="startchange">
+<div class="tbl_class">
+    <table align="center" style="margin-bottom: 25px;">
+        <tr style="background-color: #233F88; color:#fff">
+            <th>RANK</th>
+            <th>TEAM</th>
+            <th>POINTS</th>
+        </tr>
+        {% for s in Standings %}
+        {% if forloop.counter|divisibleby:2%}
+        <tr style="background-color: #eee;">
+            {% else %}
+        <tr>
+            {% endif %}
+            <td><strong>{{forloop.counter}}</strong></td>
+            <td>{{s.team.name}}</td>
+            <td>{{s.points}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+</div>
+
+<div class="tbl_class">
+    <table align="center" style="margin-bottom: 25px;">
+        <tr style="background-color: #fff; color:#000">
+            <th>TEAM</th>
+            <th>STATUS</th>
+        </tr>
+        {% for s in Standings %}
+            <tr>
+                <td>{{s.team.name}}</td>
+                <td><progress value="{{s.points}}" max="10"></progress></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+</div>
+<!---
+<div style="display: block;">
+{% for s in Statistics %}
+<div>
+    <p>{{s.team.name}}</p>
+
+</div>
+{% endfor %}
+</div>
+-->
+
+<!--footer--><!---
+<footer>
+    <div class="copyrigth">
+        <p style="font-family:Roboto;"> &copy Copyright IPL, BCCI 2016. All Rights reserved.</p>
+    </div>
+</footer>
+-->
+
+
+</body>
+</html>

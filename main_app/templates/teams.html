@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/Javeed%20Akthar/Documents/ipl/index.html# -->
+{% load staticfiles %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <title>IPLT20 - Teams</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="image/title-logo.jpg" type="image/jpg">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+
+</head>
+<!--header-->
+<body style="font-family:Roboto;">
+<header role="banner" class="mathhead">
+    <!---<div class="pbar" text-align="center">
+
+        <img src="{% static 'img/logo.jpg' %}" align="middle" style="position: relative;height: 130px;"/>
+
+    </div>-->
+    <img src="{% static 'img/nav_cover.png' %}" align="middle" style="width:100%;margin-top:-250px;z-index: -1;"/>
+    <nav class="nav_bar">
+    <ul class="menu">
+        <li><a href="index">HOME</a></li>
+        <li><a href="result">RESULT</a></li>
+        <li><a href="schedule">SCHEDULE</a></li>
+        <li><a href="teams" class="active">TEAMS</a></li>
+        <li><a href="stats">STATS</a></li>
+        <li><a href="contactus">CONTACT US</a></li>
+    </ul>
+</nav>
+
+
+</header>
+
+<!---
+<div style="padding:0% 10%; height:150px;">
+    {% for t in Teams %}
+    <div class="teams_card">
+        <div style="padding: 20px;">
+            <img class="potrait" src="media/{{t.logo_url}}"/>
+        </div>
+        <hr>
+        <div>
+            <a href="/IPL/detail/{{t.team_id}}" style="text-decoration: none; color: #000;">
+                <p>{{t.name}}</P>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+-->
+<div class="teams_image">
+    {% for t in Teams %}
+    <a href="/IPL/detail/{{t.team_id}}" style="text-decoration: none; color: #000;">
+        <div class="profile_team">
+            <img src="media/{{t.profile_url}}" style="width: 100%; height: 225px;"/>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+<br><br>
+
+
+<br><br> <br>
+
+<!--footer-->
+<!---
+<footer>
+  <div class="copyrigth">
+    <p> &copy Copyright IPL, BCCI 2016. All Rights reserved.</p>
+  </div>
+</footer>
+-->
+
+</body>
+</html>

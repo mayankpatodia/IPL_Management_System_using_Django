@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/Javeed%20Akthar/Documents/ipl/index.html# -->
+{% load staticfiles %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <title>IPLT20 - Schedule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="image/title-logo.jpg" type="image/jpg">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+
+</head>
+<!--header-->
+<body style="font-family:Roboto;">
+<header role="banner" class="mathhead">
+    <!---<div class="pbar" text-align="center">
+
+        <img src="{% static 'img/logo.jpg' %}" align="middle" style="position: relative;height: 130px;"/>
+
+    </div>-->
+    <img src="{% static 'img/nav_cover.png' %}" align="middle" style="width:100%;margin-top:-250px;z-index: -1;"/>
+    <nav class="nav_bar">
+    <ul class="menu">
+        <li><a href="index">HOME</a></li>
+        <li><a href="result">RESULT</a></li>
+        <li><a href="schedule" class="active">SCHEDULE</a></li>
+        <li><a href="teams">TEAMS</a></li>
+        <li><a href="stats">STATS</a></li>
+        <li><a href="contactus">CONTACT US</a></li>
+    </ul>
+</nav>
+
+
+</header>
+
+<br><br> <br>
+
+<div class="schedule">
+    <div class="card">
+        <table class="sch_table" align="center" style="width:70%;">
+            <col style="width:5%">
+            <col style="width:30%">
+            <col style="width:15%">
+            <tr>
+                <th>DATE</th>
+                <th>DETAILS</th>
+                <th>TIME</th>
+            </tr>
+
+            {% for s in Schedule %}
+            {% if forloop.counter|divisibleby:2%}
+            <tr style="background-color: #eee;">
+                {% else %}
+            <tr>
+                {% endif %}
+                <td>{{s.date}}</td>
+                <td>
+                    <div>
+                        <img src="media/{{s.team1.logo_url}}"/>
+                        <p>{{s.team1.name}}</p>
+                    </div>
+                    <div>
+                        <p style="padding: 15px 0px;font-size: 25px;">vs</p>
+                    </div>
+                    <div>
+                        <img src="media/{{s.team2.logo_url}}"/>
+                        <p>{{s.team2.name}}</p>
+                    </div>
+                    <div style="width:100%; padding:0px;">
+                        <p style="margin:0px; color:#233F88;">{{s.venue_id}}</p>
+                    </div>
+                </td>
+                <td>
+                    <!---<p>8:00 PM<br>02:30 PM GMT / 08:00 PM LOCAL</p>-->
+                    <p>{{s.time}}</p>
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+
+<br><br> <br>
+
+<!--footer-->
+<footer>
+    <div class="copyrigth">
+        <p style="font-family:Roboto;"> &copy Copyright IPL, BCCI 2016. All Rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

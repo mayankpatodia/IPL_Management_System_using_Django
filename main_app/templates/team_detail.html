@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/Javeed%20Akthar/Documents/ipl/index.html# -->
+{% load staticfiles %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <title>IPLT20 - Team Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="{% static 'image/title-logo.jpg' %}" type="image/jpg">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+
+</head>
+<!--header-->
+<body style="font-family: Roboto;">
+<header role="banner" class="mathhead">
+    <!---<div class="pbar" text-align="center">
+
+        <img src="{% static 'img/logo.jpg' %}" align="middle" style="position: relative;height: 130px;"/>
+
+    </div>-->
+    <div>
+        <img src="/IPL/media/{{Details.cover_url}}" align="middle" style="width:100%;position: absolute;"/>
+        <div style="float:left;display:inline-block">
+            <h3 style="
+        font-size: 45px;
+        padding: 0px 50px;
+        font-family: Roboto;
+        font-weight: 300;
+        color: #fff;
+        position: absolute;
+        margin-top: 450px;
+  ">{{Details.name}}</h3>
+        </div>
+        <div style="float:right;display:inline-block">
+        <p  style="
+        font-size: 27px;
+        font-family: Roboto;
+        font-weight: 300;
+        color: #fff;
+        position: absolute;
+        margin-top: 400px;
+        z-index: 1;
+        right: 76px;
+        border: 0px;
+">Owner: {{Details.owner}}</br>
+            Coach   : {{Details.coach}}</br>
+            Captain : {{Details.captain}}</br>
+            Venue   :   {{Venue.name}}</p>
+        </div>
+    </div>
+
+</header>
+
+
+
+
+
+<div class="schedule" style="z-index: 1;position: absolute;width: 100%;top: 700px;">
+    <div class="card">
+        <table class="sch_table" align="center" style="width:60%;margin-bottom:25px;">
+            <col style="width:25%">
+            <col style="width:10%">
+            <tr>
+                <th>Player Name</th>
+                <th>Role</th>
+            </tr>
+
+            {% for p in Players %}
+            {% if forloop.counter|divisibleby:2%}
+            <tr style="background-color: #eee;">
+                {% else %}
+            <tr>
+                {% endif %}
+                <td style="padding: 10px 10px;">{{p.name}}</td>
+                <td style="padding: 10px 10px;">
+                    <!---<p>8:00 PM<br>02:30 PM GMT / 08:00 PM LOCAL</p>-->
+                    <p>{{p.role}}</p>
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+
+<br><br>	<br>
+
+    <!--footer--><!---
+    <footer>
+      <div class="copyrigth">
+        <p style="font-family:Roboto;"> &copy Copyright IPL, BCCI 2016. All Rights reserved.</p>
+      </div>
+    </footer>
+-->
+
+</body></html>
